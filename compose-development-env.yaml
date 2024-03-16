@@ -1,0 +1,19 @@
+  services:
+    django_app:
+      build:
+        context: .
+        dockerfile: Dockerfile
+      ports:
+        - '8080:8080'
+      volumes:
+        - ./votadom:/app/votadom
+      depends_on:
+        - postgresdb
+    postgresdb:
+      image: postgres:16.2-alpine3.19
+      environment:
+        - POSTGRES_PASSWORD=secretodev
+        - POSTGRES_USER=votadom
+        - POSTGRES_DB=votadom
+      volumes:
+        - ./database/postgresql/data:/var/lib/postgresql/data
