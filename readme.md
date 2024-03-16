@@ -84,7 +84,7 @@ Este paso seria por el momento, proximamente la imagen estaria disponible para l
 
 Para ejecutar la aplicacion crearemos un contenedor.
 
-`(venv) user@pc:~/votadominicana$`<b>`docker run --name app -it -p 8080:8080 -v [ruta-absoluta]/votadominicana/votadom:votadom votadominicana:dev-0.0.1`</b>
+`(venv) user@pc:~/votadominicana$`<b>`docker run --name app -it -p 8080:8080 -v [ruta-absoluta]/votadominicana/votadom:/app/votadom votadominicana:dev-0.0.1`</b>
 
 - <b>`--name [nombre contenedor]`</b>: agregar alias al contenedor.
 - <b>`-it`</b>: conexion interactiva con el contenedor, permite ver que pasa dentro e interactuar por comandos.
