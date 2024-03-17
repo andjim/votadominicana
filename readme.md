@@ -72,29 +72,38 @@ Instalamos las dependencias en nuestro entorno de desarrollo para poder aplicar 
 - Dependencias de Python para el Backend
 `(venv) user@pc:~/votadominicana$` <b>`pip install -r requirements.txt`</b>
 
-### 4. Creando la imagen de docker
+### 4. Ejecutemos la aplicacion
 
-Creamos a imagen del aplicativo para luego ejecutar el contenedor:
+Para Inicializar la aplicacion:
 
-`(venv) user@pc:~/votadominicana$` <b>`docker build -t votadominicana:dev-0.0.1 .`</b>
+`(venv) user@pc:~/votadominicana$`<b>`docker compose -f compose-development-env.yaml up -d`</b>
 
-Este paso seria por el momento, proximamente la imagen estaria disponible para la descarga sin necesidad de que cada quien tenga que construirla.
+Para detener la aplicacion:
 
-### 5. Ejecutemos la aplicacion
+`(venv) user@pc:~/votadominicana$`<b>`docker compose -f compose-development-env.yaml up stop`</b>
 
-Para ejecutar la aplicacion crearemos un contenedor.
+Para volver a ejecutar la aplicacion:
 
-`(venv) user@pc:~/votadominicana$`<b>`docker run --name app -it -p 8080:8080 -v [ruta-absoluta]/votadominicana/votadom:/app/votadom votadominicana:dev-0.0.1`</b>
+`(venv) user@pc:~/votadominicana$`<b>`docker compose -f compose-development-env.yaml up start`</b>
 
-- <b>`--name [nombre contenedor]`</b>: agregar alias al contenedor.
-- <b>`-it`</b>: conexion interactiva con el contenedor, permite ver que pasa dentro e interactuar por comandos.
-- <b>`-p [puerto de tu pc]:[puerto del contendor]`</b>: sirve para hacer forward o publicar el puerto del contenedor hacia el de la pc, permitiendo exponerlo al exterior y recibir y enviar requests.
-- <b>`-v [ruta absoluta de la carpeta en tu pc]:[carpeta del contenedor]`</b>: le indicaremos que la tome la carpeta `votadominicana/votadom` y la conecte con la carpeta interna del contenedor llamada `/votadom`.
+Para hacer que la aplicacion reinicie:
+
+`(venv) user@pc:~/votadominicana$`<b>`docker compose -f compose-development-env.yaml up restart`</b>
+
+### 5. Aplicar cambios a la base de datos
+
+Al momento de inicializar la aplicacion por primera vez, o luego de modificar la estructura de los modelos de
+base de datos (campo,tablas), se deben de aplicar migraciones.
+
+Para aplicar las migraciones en nuestro entorno de desarrollo debemos tener la aplicacion en ejecucion, y luego ejecutar la siguiente secuencia de scripts:
+
+1. `docker container exec -t votadominicana-django_app-1 python votadom/manage.py makemigrations`
+2. `docker container exec -t votadominicana-django_app-1 python votadom/manage.py migrate`
 
 ## Contribuciones
 Trabajaremos las mejoras por issues para la distribucion y seguimiento de las tareas.
 
-Recuerden configurar si cliente de git en su maquina local para las firmas de los commits.
+Recuerden configurar su cliente de git en su maquina local para las firmas de los commits.
 
 ## Licencia
-GNU General Public License v2
+[![License: GPL v2](https://img.shields.io/badge/License-GPLv2-blue.svg)](https://www.gnu.org/licenses/gpl-2.0.html)
