@@ -3,4 +3,4 @@ node_modules/
 *.pyc
 *.sqlite3
 database/
-frontend/static/frontend/
+votadom/frontend/static/frontend/
