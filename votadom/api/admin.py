@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import Candidatura, PartidoPolitico, Eleccion
 
-# Register your models here.
+admin.site.register(Candidatura)
+admin.site.register(PartidoPolitico)
+admin.site.register(Eleccion)
