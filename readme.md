@@ -68,7 +68,7 @@ Para desacticarlo solo debes ejecutar el comando `deactivate` en tu linea de com
 Instalamos las dependencias en nuestro entorno de desarrollo para poder aplicar mejoras y modificaciones al codigo del aplicativo.
 
 - Dependencias de Javascript para el frontend
-`(venv) user@pc:~/votadominicana$` <b>`npm install`</b>
+`(venv) user@pc:~/votadominicana/votadom/frontend$` <b>`npm install`</b>
 - Dependencias de Python para el Backend
 `(venv) user@pc:~/votadominicana$` <b>`pip install -r requirements.txt`</b>
 
