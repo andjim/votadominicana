@@ -100,10 +100,18 @@ Para aplicar las migraciones en nuestro entorno de desarrollo debemos tener la a
 1. `docker container exec -t votadominicana-django_app-1 python votadom/manage.py makemigrations`
 2. `docker container exec -t votadominicana-django_app-1 python votadom/manage.py migrate`
 
+
+### 5. Aplicar cambios al frontend
+
+Dentro de la carpeta `votadom/frontend` luego de agregar un cambio al frontend se debeb ejecutar el comando `npm run dev`.
+
 ## Contribuciones
+
 Trabajaremos las mejoras por issues para la distribucion y seguimiento de las tareas.
 
 Recuerden configurar su cliente de git en su maquina local para las firmas de los commits.
+
+Los desarrollos del frontend se aplican en la carperta `votadom/frontend/src/components` y el backend en la carpeta `votadom/api`.
 
 ## Licencia
 [![License: GPL v2](https://img.shields.io/badge/License-GPLv2-blue.svg)](https://www.gnu.org/licenses/gpl-2.0.html)
