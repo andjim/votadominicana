@@ -4,3 +4,4 @@ node_modules/
 *.sqlite3
 database/
 votadom/frontend/static/frontend/
+votadom/api/migrations
