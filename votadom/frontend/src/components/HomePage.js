@@ -54,7 +54,7 @@ export default class HomePage extends Component {
             </Grid>
             <Grid item xs={12}>
                 <Typography variant="h4" color="#0d1b3c">¡Tu voz, Tu Patria!</Typography>
-                <Button component={RLink} to="/Vote" variant="contained" startIcon={<HowToVoteIcon/>} size="large" color="primary" sx={{marginTop:2, fontSize:"1.6rem"}}>
+                <Button component={RLink} to="/vote" variant="contained" startIcon={<HowToVoteIcon/>} size="large" color="primary" sx={{marginTop:2, fontSize:"1.6rem"}}>
                     ¡Vota Ahora!
                 </Button>
             </Grid>
