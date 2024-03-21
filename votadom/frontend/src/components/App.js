@@ -14,7 +14,7 @@ export default class App extends Component {
     render() {
         return <Router>
             <Routes>
-                <Route exact path="/"  Component={HomePage}/>
+                <Route exact path="/" Component={HomePage}></Route>
             </Routes>
         </Router>;
     }
