@@ -5,6 +5,7 @@ import {
     Routes, Route, Link, Redirect
 } from "react-router-dom";
 import HomePage from "./HomePage";
+import BaseVotePage from "./VotePage/BaseVotePage"
 
 export default class App extends Component {
     constructor(props){
@@ -15,6 +16,7 @@ export default class App extends Component {
         return <Router>
             <Routes>
                 <Route exact path="/" Component={HomePage}></Route>
+                <Route exact path="/vote" Component={BaseVotePage}></Route>
             </Routes>
         </Router>;
     }
