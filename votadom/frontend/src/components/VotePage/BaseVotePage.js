@@ -4,6 +4,7 @@ import Typography from "@mui/material/Typography";
 import ProgressMobileStepper from "./ProgressMobileStepper";
 import CollegeForm from "./Steps/CollegeForm";
 import DocumentValidator from "./Steps/DocumentValidator";
+import { Link } from "react-router-dom";
 
 const page_steps = [
     { 
@@ -51,25 +52,24 @@ export default function BaseVotePage (props){
     const ActiveComponent = page_steps[activeStep].Component;
 
     
-    return <Grid container spacing={1}>
-            <Grid container item xs={12} sx={{height: "max-content", boxShadow: "1px 0px 3px rgba(0, 0, 0, 0.3)"}}>
-                <Grid item xs={6}>
-                    <Typography  color="#0d1b3c"
-                        variant="h5" component="h1" 
-                        sx={
-                                {
-                                    fontFamily: "Montserrat Alternates",  fontWeight: 600,
-                                    textShadow: "0px 1px 2px rgba(13, 27, 60, 0.5)", padding:2
+    return <Grid container spacing={1} flexDirection={"row"} >
+            <Grid item xs={12}>
+                <Link to={"/"} style={{textDecoration: "none"}}>
+                    <Typography  color="#0d1b3c" boxShadow={"1px 0px 3px rgba(0, 0, 0, 0.3)"}
+                            variant="h5" component="h1" 
+                            sx={
+                                    {
+                                        fontFamily: "Montserrat Alternates",  fontWeight: 600,
+                                        textShadow: "0px 1px 2px rgba(13, 27, 60, 0.5)", padding:2
+                                    }
                                 }
-                            }
-                    >
-                        VotaDominicana
+                        >
+                            VotaDominicana
                     </Typography>
-                </Grid>
+                </Link>
             </Grid>
             <Grid container item xs={12}>
                 <ActiveComponent />
-                {activeStep}
             </Grid>
             <Grid container item xs={12} alignItems={"flex-end"}>
                 <ProgressMobileStepper 

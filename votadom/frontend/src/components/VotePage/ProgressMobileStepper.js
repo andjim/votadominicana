@@ -43,7 +43,7 @@ export default function ProgressMobileStepper(props) {
             ) : (
               <KeyboardArrowLeft />
             )}
-            Back{props.activeStep}
+            Back
           </Button>
         }
       />
